@@ -5,7 +5,10 @@ plugins {
 
 android {
     compileSdk 32
-
+    buildFeatures {
+        // 뷰 바인딩 활성화
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.example.eyesight_test"
         minSdk 21
