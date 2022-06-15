@@ -14,9 +14,9 @@ class Result_colorblindness : AppCompatActivity() {
             val answer_list = intent.getIntegerArrayListExtra("result")
             System.out.println("결과 창으로")
             System.out.println(answer_list)
-//            for(i in answer_list!!){
-//                System.out.println(i)
-//            }
+            for(i in answer_list!!){
+                System.out.println(i)
+            }
         }
 
     }
