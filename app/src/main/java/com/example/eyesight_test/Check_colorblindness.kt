@@ -1,6 +1,6 @@
 package com.example.eyesight_test
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.eyesight_test.databinding.ActivityCheckColorblindnessBinding
@@ -9,11 +9,13 @@ class Check_colorblindness : AppCompatActivity() {
     private var check_answer = 0
     private var image_num = 1
     private var answer_list = arrayListOf<Int>()    //선택한 정답 리스트
+    private val answer = resources.getIntArray(resources.getIdentifier("correct","array",packageName))
     private var mBinding: ActivityCheckColorblindnessBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityCheckColorblindnessBinding.inflate(layoutInflater)
         setContentView(mBinding!!.root)
+        var resultcheck= arrayListOf<Int>(0,0,0,0)
         Set_problem_image(1)
         Set_ChoiceNum(image_num)
         mBinding!!.checkGroup.setOnCheckedChangeListener { group, i ->
@@ -35,23 +37,24 @@ class Check_colorblindness : AppCompatActivity() {
 
         }
         mBinding!!.completeBtn.setOnClickListener(){
-            if (image_num<5){
+            if (image_num<4){
                 if (check_answer!=0){
+                    image_num++
                     Set_problem_image(image_num)
                     Set_ChoiceNum(image_num)
                     answer_list.add(check_answer)
-                    check_answer=0
-                    image_num++
+                    //check_answer=0
+                    resources.getIntArray(0)
                 }
                 else{
                     System.out.println("답을 골라주세요.")
                 }
             }
             else{
-                System.out.println("결과 창으로")
-                for(i in answer_list){
-                    System.out.println(i)
-                }
+                answer_list.add(check_answer)
+                val intent = Intent(this, Result_colorblindness::class.java)
+                intent.putExtra("result",answer_list)
+                startActivity(intent)
             }
         }
 
