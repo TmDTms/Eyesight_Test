@@ -25,7 +25,7 @@ class Result_colorblindness : AppCompatActivity() {
                 mBinding!!.resultView.text="전색약(맹)이 있습니다."
             }
             else{
-                "정상입니다."
+                mBinding!!.resultView.text="정상입니다."
             }
         }
         mBinding!!.button1.setOnClickListener(){
