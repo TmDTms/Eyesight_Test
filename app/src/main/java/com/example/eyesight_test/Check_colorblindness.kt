@@ -52,7 +52,7 @@ class Check_colorblindness : AppCompatActivity() {
                 val intent = Intent(this, Result_colorblindness::class.java)
                 intent.putExtra("result",resultcheck)   //result라는 키로 resultcheck를 intent로 전달
                 startActivity(intent)
-                this.finish()   //해당 액티비티 종료
+                finish()   //해당 액티비티 종료
             }
         }
 
