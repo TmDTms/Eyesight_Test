@@ -3,6 +3,8 @@ package com.example.eyesight_test
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.Toast
 import com.example.eyesight_test.databinding.ActivityCheckColorblindnessBinding
 
 class Check_colorblindness : AppCompatActivity() {
@@ -44,7 +46,9 @@ class Check_colorblindness : AppCompatActivity() {
                     Set_ChoiceNum(image_num)        //보기 변경
                 }
                 else{
-                    System.out.println("답을 골라주세요.") //toast같은 걸로 변경예정
+                    val toast = Toast.makeText(this, "답을 골라주세요.", Toast.LENGTH_SHORT)
+                    toast.setGravity(Gravity.CENTER,0,0)
+                    toast.show()
                 }
             }
             else{
