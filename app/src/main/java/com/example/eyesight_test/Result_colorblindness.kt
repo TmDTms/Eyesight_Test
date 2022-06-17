@@ -10,8 +10,8 @@ class Result_colorblindness : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityResultColorblindnessBinding.inflate(layoutInflater)
         setContentView(mBinding!!.root)
-        if (intent.hasExtra("result")){
-            val answer_list = intent.getIntegerArrayListExtra("result")
+        if (intent.hasExtra("result")){ //result라는 key값이 있는지
+            val answer_list = intent.getIntegerArrayListExtra("result") //result키 값에서 int arraylist 받아옴
             if (answer_list!![1]>=3){
                 if (answer_list!![2]>=3) {
                     mBinding!!.resultView.text="적녹색 혹은 전색약(맹)이 있습니다."
@@ -29,7 +29,7 @@ class Result_colorblindness : AppCompatActivity() {
             }
         }
         mBinding!!.button1.setOnClickListener(){
-            finish()
+            finish()  //액티비티 종료
         }
     }
 }
