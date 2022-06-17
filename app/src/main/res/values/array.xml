@@ -1,34 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="correct">
-        <item>6</item>
-        <item>97</item>
-        <item>12</item>
         <item>8</item>
-        <item>26</item>
+        <item>8</item>
+        <item>74</item>
+        <item>5</item>
+        <item>48</item>
+        <item>6</item>
+        <item>75</item>
+        <item>15</item>
+    </integer-array>
+    <integer-array name="correct_1">
+        <item>8</item>
+        <item>3</item>
+    </integer-array>
+    <integer-array name="correct_2">
+        <item>8</item>
+        <item>5</item>
+    </integer-array>
+    <integer-array name="correct_3">
+        <item>74</item>
+        <item>21</item>
+    </integer-array>
+    <integer-array name="correct_4">
+        <item>5</item>
+        <item>3</item>
+    </integer-array>
+    <integer-array name="correct_5">
+        <item>48</item>
+        <item>13</item>
+    </integer-array>
+    <integer-array name="correct_6">
+        <item>6</item>
+        <item>5</item>
+    </integer-array>
+    <integer-array name="correct_7">
+        <item>75</item>
+        <item>16</item>
+    </integer-array>
+    <integer-array name="correct_8">
+        <item>15</item>
+        <item>17</item>
     </integer-array>
     <integer-array name="choice_num1">
         <item>0</item>
         <item>3</item>
-        <item>6</item>
+        <item>5</item>
         <item>8</item>
     </integer-array>
     <integer-array name="choice_num2">
-        <item>81</item>
-        <item>87</item>
-        <item>97</item>
-        <item>91</item>
-    </integer-array>
-    <integer-array name="choice_num3">
-        <item>12</item>
-        <item>15</item>
-        <item>17</item>
-        <item>18</item>
-    </integer-array>
-    <integer-array name="choice_num4">
-        <item>0</item>
         <item>3</item>
+        <item>5</item>
         <item>6</item>
         <item>8</item>
+    </integer-array>
+    <integer-array name="choice_num3">
+        <item>4</item>
+        <item>7</item>
+        <item>21</item>
+        <item>74</item>
+    </integer-array>
+    <integer-array name="choice_num4">
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+    </integer-array>
+    <integer-array name="choice_num5">
+        <item>13</item>
+        <item>18</item>
+        <item>43</item>
+        <item>48</item>
+    </integer-array>
+    <integer-array name="choice_num6">
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+    </integer-array>
+    <integer-array name="choice_num7">
+        <item>15</item>
+        <item>16</item>
+        <item>75</item>
+        <item>76</item>
+    </integer-array>
+    <integer-array name="choice_num8">
+        <item>13</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
     </integer-array>
 </resources>

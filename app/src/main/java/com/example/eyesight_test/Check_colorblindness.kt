@@ -10,14 +10,13 @@ class Check_colorblindness : AppCompatActivity() {
     private var image_num = 1
     private var answer_list = arrayListOf<Int>()    //선택한 답 리스트
     private var answer: IntArray? = null//정답 리스트
-    //private var resultcheck= arrayListOf<Int>(0,0,0,0)    // 정상, 적, 녹, 청색맹
-    private var choice_num: IntArray? = null
+    private var resultcheck= arrayListOf<Int>(0,0,0)    // 정상, 적녹색맹, 전색맹
+    private var choice_num: IntArray? = null        //객관식 리스트
     private var mBinding: ActivityCheckColorblindnessBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityCheckColorblindnessBinding.inflate(layoutInflater)
         setContentView(mBinding!!.root)
-        answer = resources.getIntArray(applicationContext.resources.getIdentifier("correct","array",applicationContext.packageName))
         Set_problem_image(1)
         Set_ChoiceNum(image_num)
         mBinding!!.checkGroup.setOnCheckedChangeListener { group, i ->
@@ -39,13 +38,13 @@ class Check_colorblindness : AppCompatActivity() {
 
         }
         mBinding!!.completeBtn.setOnClickListener(){
-            if (image_num<4){
+            if (image_num<8){
                 if (check_answer!=0){
-                    image_num++
                     answer_list.add(choice_num!![check_answer-1].toInt())
+                    Iscorrect(image_num,choice_num!![check_answer-1].toInt())
+                    image_num++
                     Set_problem_image(image_num)
                     Set_ChoiceNum(image_num)
-
                 }
                 else{
                     System.out.println("답을 골라주세요.")
@@ -53,18 +52,20 @@ class Check_colorblindness : AppCompatActivity() {
             }
             else{
                 answer_list.add(choice_num!![check_answer-1].toInt())
+                Iscorrect(image_num,choice_num!![check_answer-1].toInt())
                 val intent = Intent(this, Result_colorblindness::class.java)
-                intent.putExtra("result",answer_list)
+                intent.putExtra("result",resultcheck)
                 startActivity(intent)
+                this.finish()
             }
         }
 
     }
-    fun Set_problem_image(num : Int){
-        mBinding!!.questionImage.setBackgroundResource(resources.getIdentifier("image_$num","drawable",packageName))
+    fun Set_problem_image(i : Int){
+        mBinding!!.questionImage.setBackgroundResource(resources.getIdentifier("image_$i","drawable",packageName))
     }
-    fun Set_ChoiceNum(num : Int){
-        val resId = applicationContext.resources.getIdentifier("choice_num$num","array",applicationContext.packageName)
+    fun Set_ChoiceNum(i : Int){
+        val resId = applicationContext.resources.getIdentifier("choice_num$i","array",applicationContext.packageName)
         choice_num=resources.getIntArray(resId)
         mBinding!!.select1.text= choice_num!![0].toString()
         mBinding!!.select2.text= choice_num!![1].toString()
@@ -72,8 +73,16 @@ class Check_colorblindness : AppCompatActivity() {
         mBinding!!.select4.text= choice_num!![3].toString()
     }
     fun Iscorrect(i : Int, num : Int){
-        if(answer!![i]!=num){
+        answer = resources.getIntArray(applicationContext.resources.getIdentifier("correct_$i","array",applicationContext.packageName))
+        if(answer!![0]==num){
             System.out.println("맞음")
+            resultcheck[0]+=1
+        }
+        else if (answer!![1]==num){
+            resultcheck[1]+=1
+        }
+        else{
+            resultcheck[2]+=1
         }
     }
 }
