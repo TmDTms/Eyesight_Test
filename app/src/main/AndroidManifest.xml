@@ -23,6 +23,9 @@
             android:name=".Check_eyesight"
             android:exported="false" />
         <activity
+            android:name=".Check_distance"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

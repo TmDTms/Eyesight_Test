@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding!!.root)
         mBinding!!.button1.setOnClickListener(){
-            val intent = Intent(this, Check_eyesight::class.java)
+            val intent = Intent(this, Check_distance::class.java)
             startActivity(intent)
         }
         mBinding!!.button2.setOnClickListener(){
