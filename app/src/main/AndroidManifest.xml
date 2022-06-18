@@ -20,6 +20,9 @@
             android:name=".Check_colorblindness"
             android:exported="false" />
         <activity
+            android:name=".Result_eyesight"
+            android:exported="false"/>
+        <activity
             android:name=".Check_eyesight"
             android:exported="false" />
         <activity

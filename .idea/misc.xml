@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Eyesight_Test/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_check_colorblindness.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_check_distance.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_check_eyesight.xml" value="0.33" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_result_colorblindness.xml" value="0.14814814814814814" />
+        <entry key="..\:/Users/PC/Desktop/hci/Eyesight_Test/app/src/main/res/layout/activity_result_eyesight.xml" value="0.14814814814814814" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Eyesight_Test/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
       </map>
     </option>
