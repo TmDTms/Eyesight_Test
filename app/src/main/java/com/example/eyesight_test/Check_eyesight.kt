@@ -1,12 +1,16 @@
 package com.example.eyesight_test
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.Gravity
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.eyesight_test.databinding.ActivityCheckEyesightBinding
-import java.util.Random
+import java.util.*
+
 
 class Check_eyesight : AppCompatActivity() {
     private var random = Random()
@@ -103,5 +107,17 @@ class Check_eyesight : AppCompatActivity() {
             resultEyesight -= error_num
         }
         mBinding!!.textView5.text = String.format("%.1f", resultEyesight)
+    }
+    fun changesize(width : Int, height : Int){  //이미지 사이즈 변경
+        val img: ImageView = mBinding!!.calcQuestionImage   //imageView id 가져옴
+        val params: ConstraintLayout.LayoutParams = img.getLayoutParams() as ConstraintLayout.LayoutParams  //파라미터가져와서
+        params.width = width        //width설정
+        params.height = height      //height설정
+        img.setLayoutParams(params) //설정한 params값으로 변경
+    }
+    fun changepx(dp : Float): Float {  // 동적으로 바꿀때 px값으로 들어가는데 xml에서 dp로 하는거처럼 넣고 싶으면 변환해야 한대서 인터넷에서 코드 가져옴
+        //테스트는 안해봄
+        val metrics = resources.displayMetrics
+        return dp * (metrics.densityDpi as Float / DisplayMetrics.DENSITY_DEFAULT)
     }
 }
