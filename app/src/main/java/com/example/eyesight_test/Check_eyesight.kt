@@ -16,7 +16,10 @@ class Check_eyesight : AppCompatActivity() {
     private var random = Random()
     private var check_answer = 0        //선택한 객관식 번호
     private var sight_num = rand(1, 8)           //이미지 번호
-    private var count = 0;
+    private var count = 0
+    private var rate = 1.0
+    private var h = 100.0
+    private var w = 110.0
     private var resultEyesight = 1.0    // 정상, 적녹색맹, 전색맹정답 체크 개수
     private var choice_num: IntArray? = null        //객관식 보기 리스트
     private var mBinding: ActivityCheckEyesightBinding? = null
@@ -24,7 +27,14 @@ class Check_eyesight : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityCheckEyesightBinding.inflate(layoutInflater)
         setContentView(mBinding!!.root)
-        Set_problem_image(sight_num)    //이미지 설정
+        if(intent.hasExtra("user_height")){
+            val user_height = intent.getIntExtra("user_height", 60)
+            rate = 300.0 / user_height
+        }
+        Set_problem_image(sight_num)    //이미지 설
+        h /= rate
+        w /= rate
+        changesize(h.toInt(), w.toInt())
         Set_ChoiceNum(sight_num)    //객관식 보기 설정
         mBinding!!.sightCheckGroup.setOnCheckedChangeListener { group, i ->
             when(i){
@@ -50,6 +60,11 @@ class Check_eyesight : AppCompatActivity() {
                     Iscorrect(sight_num,choice_num!![check_answer-1].toInt(), count)   //선택한 답이 어떤 답인지 판단
                     sight_num = rand(1, 8)
                     count++     //이미지번호 증가
+                    if(resultEyesight <= 2.0)
+                        rate = 2.0 - resultEyesight
+                    else
+                        rate = 3.0 - resultEyesight
+                    changesize((h * rate).toInt(), (w * rate).toInt())
                     Set_problem_image(sight_num)    //이미지 변경
                     Set_ChoiceNum(sight_num)        //보기 변경
                 }
@@ -76,9 +91,6 @@ class Check_eyesight : AppCompatActivity() {
     fun Set_problem_image(i : Int){
         mBinding!!.calcQuestionImage.setBackgroundResource(resources.getIdentifier("sight_$i","drawable",packageName))
         //drawable에서 image_$i에 해당하는 이미지로 questionImage 변경
-        if(intent.hasExtra("user_height")){
-            val user_height = intent.getIntExtra("user_height", 65)
-        }
     }
     fun Set_ChoiceNum(i : Int){
         val resId = applicationContext.resources.getIdentifier("choice_int$i","array",applicationContext.packageName)
