@@ -1,8 +1,10 @@
 package com.example.eyesight_test
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.TypedValue
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.Toast
@@ -34,6 +36,7 @@ class Check_eyesight : AppCompatActivity() {
         Set_problem_image(sight_num)    //이미지 설
         h /= rate
         w /= rate
+        System.out.println(""+h+" "+w)
         changesize(h.toInt(), w.toInt())
         Set_ChoiceNum(sight_num)    //객관식 보기 설정
         mBinding!!.sightCheckGroup.setOnCheckedChangeListener { group, i ->
@@ -127,9 +130,9 @@ class Check_eyesight : AppCompatActivity() {
         params.height = height      //height설정
         img.setLayoutParams(params) //설정한 params값으로 변경
     }
-    fun changepx(dp : Float): Float {  // 동적으로 바꿀때 px값으로 들어가는데 xml에서 dp로 하는거처럼 넣고 싶으면 변환해야 한대서 인터넷에서 코드 가져옴
+    fun changepx(dp: Float): Float {
+        // 동적으로 바꿀때 px값으로 들어가는데 xml에서 dp로 하는거처럼 넣고 싶으면 변환해야 한대서 인터넷에서 코드 가져옴
         //테스트는 안해봄
-        val metrics = resources.displayMetrics
-        return dp * (metrics.densityDpi as Float / DisplayMetrics.DENSITY_DEFAULT)
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, this.resources.displayMetrics)
     }
 }

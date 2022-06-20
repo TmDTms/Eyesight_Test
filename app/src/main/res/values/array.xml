@@ -126,52 +126,52 @@
         <item>9</item>
     </integer-array>
     <integer-array name="choice_int1">
+        <item>0</item>
         <item>2</item>
-        <item>6</item>
         <item>3</item>
         <item>8</item>
     </integer-array>
     <integer-array name="choice_int2">
-        <item>3</item>
+        <item>0</item>
         <item>5</item>
-        <item>6</item>
+        <item>3</item>
         <item>8</item>
     </integer-array>
     <integer-array name="choice_int3">
+        <item>0</item>
         <item>4</item>
-        <item>7</item>
         <item>2</item>
         <item>7</item>
     </integer-array>
     <integer-array name="choice_int4">
-        <item>3</item>
+        <item>0</item>
         <item>5</item>
         <item>6</item>
         <item>8</item>
     </integer-array>
     <integer-array name="choice_int5">
-        <item>3</item>
-        <item>8</item>
+        <item>0</item>
         <item>3</item>
         <item>6</item>
+        <item>8</item>
     </integer-array>
     <integer-array name="choice_int6">
+        <item>0</item>
+        <item>1</item>
         <item>7</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
+        <item>9</item>
     </integer-array>
     <integer-array name="choice_int7">
-        <item>4</item>
-        <item>5</item>
-        <item>2</item>
+        <item>0</item>
+        <item>3</item>
+        <item>6</item>
         <item>8</item>
     </integer-array>
     <integer-array name="choice_int8">
-        <item>6</item>
-        <item>5</item>
+        <item>0</item>
+        <item>8</item>
         <item>9</item>
-        <item>2</item>
+        <item>7</item>
     </integer-array>
 
 </resources>

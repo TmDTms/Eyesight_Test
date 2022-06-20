@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="149dp"
-        android:layout_height="43dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:gravity="center"
-        android:text="정답을 입력해 주세요."
+        android:text="정답을 입력해 주세요.\n잘 보이지 않으면 0을 선택해주세요"
         app:layout_constraintBottom_toTopOf="@+id/sight_check_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

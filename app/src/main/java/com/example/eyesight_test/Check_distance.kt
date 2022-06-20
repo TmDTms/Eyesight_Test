@@ -49,6 +49,7 @@ class Check_distance : AppCompatActivity() {
 
     fun NextBtn(view: View?){
         val intent = Intent(this, Check_eyesight::class.java)
+        intent.putExtra("user_height",result)   //result라는 키로 resultcheck를 intent로 전달
         startActivity(intent)
         finish()
     }
